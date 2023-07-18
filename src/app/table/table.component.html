@@ -1,0 +1,82 @@
+<form method="POST" name="form1" id="form1">
+    <h1>Registro Visitas</h1>
+    <ol>
+        <li>Datos Informativos</li>
+        <table id="tabl1">
+            <tr>
+                <td>Fecha:</td>
+                <td colspan="3"><input type="date" id="1" required></td>
+            </tr>
+            <tr>
+                <td>Tutor Empresarial:</td>
+                <td><input type="text" id="2" required pattern="[A-Za-z]{0,60}"></td>
+                <td>Tutor Específico:</td>
+                <td><input type="text" id="3" required pattern="[A-Za-z]{0,60}"></td>
+            </tr>
+            <tr>
+                <td>Estudiante:</td>
+                <td colspan="3"><input type="text" id="4" pattern="[A-Za-z]{0,60}" required></td>
+            </tr>
+            <tr>
+                <td>Empresa:</td>
+                <td><input type="text" id="5" required pattern="[A-Za-z]{0,20}"></td>
+                <td>Período:</td>
+                <td>
+                    <select id="6" required>
+                        <option value=""></option>
+                        <option value="Abr-Ago 2023">Abr-Ago 2023</option>
+                        <option value="Dic 2023 - Abr 2024">Dic 2023 - Abr 2024</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <li>Asunto:</li>
+        <textarea cols="80" rows="10" id="7" required></textarea>
+        <li>Informe Visita:</li>
+        <table>
+            <tr>
+                <th>Informe de actividades de seguimiento</th>
+                <th>Observaciones:</th>
+            </tr>
+            <tr>
+                <td>Diálogo con los tutores empresariales sobre el<br>rendimiento del estudiante</td>
+                <td>
+                    <label for="dtut_si">Sí:</label>
+                    <input type="radio" name="dtut" id="dtut_si">
+                    <label for="dtut_no">No:</label>
+                    <input type="radio" name="dtut" id="dtut_no">
+                </td>
+            </tr>
+            <tr>
+                <td>Diálogo y observación con los estudiantes sobre las<br>actividades realizadas en la compra</td>
+                <td>
+                    <label for="dest_si">Sí:</label>
+                    <input type="radio" name="dest" id="dest_si">
+                    <label for="dest_no">No:</label>
+                    <input type="radio" name="dest" id="dest_no">
+                </td>
+            </tr>
+        </table>
+        <li>Observaciones Generales:</li>
+        <textarea cols="80" rows="10" id="12"></textarea>
+    </ol>
+    <button (click)="clearForm();" class="delete">Borrar</button>
+    <button id="open" (click)="openModal()">Enviar</button>
+</form>
+
+<div class="modal-container" id="modal_container">
+    <div class="modal">
+        <h3>Resumen:</h3>
+        <span class="main">Fecha: <span id="fecha"></span></span>
+        <span class="main">Tutor Empresarial: <span id="tutor"></span></span>
+        <span class="main">Tutor Específico <span id="tutoresp"></span></span>
+        <span class="main">Estudiante: <span id="estudiante"></span></span>
+        <span class="main">Empresa: <span id="empresa"></span></span>
+        <span class="main">Período: <span id="periodo"></span></span>
+        <span class="main">Asunto: <span id="asunto"></span></span>
+        <span class="main">Diálogo Tutor: <span id="dtut"></span></span>
+        <span class="main">Diálogo Estudiante: <span id="dest"></span></span>
+        <span class="main">Observaciones: <span id="observ"></span></span>
+        <button id="close" class="close" (click)="closeModal()">Aceptar</button>
+    </div>
+</div>

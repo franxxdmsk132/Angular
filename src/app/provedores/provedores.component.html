@@ -1,0 +1,50 @@
+<div class="card text-bg-dark mb-3">
+  <div class="card-header">Proveedores</div>
+  <div class="card-body">
+    <h5 class="card-title">Listado de Proveedores</h5>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>direccion</th>
+          <th>telefono</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provedor of provedor">
+          <td>{{provedor.id}}</td>
+          <td>{{provedor.nombre}}</td>
+          <td>{{provedor.direccion}}</td>
+          <td>{{provedor.telefono}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="container-fluid-core">
+  <div class="row">
+    <div class="card" style="width: 18rem;" *ngFor="let provedor of provedor">
+      <img src="assets/img/imagen-de-un-atomo_00000000_230112124807_960x741.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Provedores</h5>
+        
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: {{provedor.id}}</li>
+        <li class="list-group-item">Nombre: {{provedor.nombre}}</li>
+        <li class="list-group-item">Direccion: : {{provedor.direccion}}</li>
+        <li class="list-group-item">Telefono: {{provedor.telefono}}</li>
+
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Facebook</a>
+        <a href="#" class="card-link">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
